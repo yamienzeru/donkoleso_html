@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Popup</title>
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="shortcut icon" href="favicon.png" />
+        <link href="css/fonts.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/styleIEOld.css" /><![endif]-->
+        <!--[if IE 8]><link rel="stylesheet" type="text/css" href="css/styleIE8.css" /><![endif]-->
+        <!--[if IE 9]><link rel="stylesheet" type="text/css" href="css/styleIE9.css" /><![endif]-->
+        <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="js/jquery.multiselect.js"></script>
+        <script src="js/platform.js"></script>
+        <script src="js/jquery.bxslider.min.js"></script>
+        <script src="js/js.js"></script>
+        <script type="text/javascript">
+            var browser = platform.name.toLowerCase();
+            var os = platform.os.family.toLowerCase();
+            if (browser == "safari") {
+                addCssLink("css/styleSafari.css");
+            }
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 8]><div class="support">Sorry, we don't support this version of Internet Explorer.<br/><a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie">Please, update your browser</a> or use another.</div><![endif]-->
+        
+        <a href="javascript:void(0);" class="button link-open-success-popup">Пример вызова попапа "товар успешно добавлен в корзину"</a>
+        <div class="popup" id="popup-goods-added">
+            <div class="fake-table">
+                <div class="fake-tr">
+                    <div class="fake-td">
+                        <div class="content">
+                            <a href="javascript:void(0);" class="btn-close"><span>продолжить<br />покупки</span></a>
+                            <h3>товар успешно добавлен в корзину</h3>
+                            <div class="for-buttons">
+                                <a href="#" class="button">на главную</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,685 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Каталог</title>
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="shortcut icon" href="favicon.png" />
+        <link href="css/fonts.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/styleIEOld.css" /><![endif]-->
+        <!--[if IE 8]><link rel="stylesheet" type="text/css" href="css/styleIE8.css" /><![endif]-->
+        <!--[if IE 9]><link rel="stylesheet" type="text/css" href="css/styleIE9.css" /><![endif]-->
+        <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="js/jquery.multiselect.js"></script>
+        <script src="js/platform.js"></script>
+        <script src="js/jquery.bxslider.min.js"></script>
+        <script src="js/js.js"></script>
+        <script type="text/javascript">
+            var browser = platform.name.toLowerCase();
+            var os = platform.os.family.toLowerCase();
+            if (browser == "safari") {
+                addCssLink("css/styleSafari.css");
+            }
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 8]><div class="support">Sorry, we don't support this version of Internet Explorer.<br/><a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie">Please, update your browser</a> or use another.</div><![endif]-->
+        <div class="white-popup" id="call-popup">
+            <div class="fake-table">
+                <div class="fake-tr">
+                    <div class="fake-td">
+                        <div class="call-popup">
+                            <div class="top-part">
+                                <div class="right"><a href="javascript:void(0);" class="close-link" title="Закрыть"></a></div>
+                                <div class="left"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="data-part">
+                                <form action="#" method="post">
+                                    <div class="manager">Наш менеджер<br />свяжется с Вами через<br />несколько минут</div>
+                                    <div class="fields-set">
+                                        <input type="text" class="input" placeholder="ИМЯ *" title="Имя (обязательное поле)" />
+                                        <input type="text" class="input" placeholder="КОНТАКТНЫЙ ТЕЛЕФОН *" title="Контактный телефон (обязательное поле)" />
+                                        <input type="text" class="input" placeholder="E-MAIL" title="E-MAIL" />
+                                        <textarea cols="" rows="" placeholder="СООБЩЕНИЕ *" class="textarea" title="Сообщение (обязательное поле)"></textarea>
+                                        <div class="error">проверьте, правильно ли введены данные!</div>
+                                    </div>
+                                    
+                                    <div class="for-buttons">
+                                        <button class="wbutton">отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="header">
+                    <a class="logo" title="Автолюбитель">&nbsp;</a>
+                    <div class="menu-dark">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div class="left">
+                                    <ul>
+                                        <li><a href="#">Оплата и доставка</a></li>
+                                        <li><a href="#">Советы</a></li>
+                                        <li><a href="#">Покупателям</a></li>
+                                        <li class="with-submenu">
+                                            <a href="javascript:void(0);">Войти</a>
+                                            <ul class="submenu">
+                                                <li><a href="#">войти</a></li>
+                                                <li><a href="#">зарегистрироваться</a></li>
+                                            </ul>
+                                        </li>                                                              
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li><a href="#">Шинный калькулятор</a></li>
+                                        <li><a href="#">Новости</a></li>
+                                        <li><a href="#">Контакты</a></li>
+                                        <li><a href="#" class="icon-shopcart"><em>4</em></a></li>
+                                    </ul>
+                                                  
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-light">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div class="left">
+                                    <ul>
+                                        <li><a href="#">Шины</a></li>
+                                        <li><a href="#">Диски</a></li>
+                                        <li><a href="#">Спецпредложения</a></li>          
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li><span class="phone">+7(863) 294-66-88</span></li>
+                                        <li>
+                                            <div class="call-requesting">
+                                                <a href="javascript:void(0);" class="btn-call link-call-popup">заказать звонок</a>
+                                                <em>с 9 до 18</em>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div class="left">
+                                <h3>Подобрать диски</h3>
+                                <div class="sidebar-filter">
+                                    <div class="button-set-double">
+                                        <a href="javascript:void(0);" data-href="choose-disk-by-auto" class="btn-mini first-child active">по автомобилю</a>
+                                        <a href="javascript:void(0);" data-href="choose-disk-by-params" class="btn-mini last-child">по параметрам</a>
+                                    </div>
+                                    <div class="choose-content active" id="choose-disk-by-auto">
+                                        <div class="set-of-params droplists">
+                                            <select class="select-params first" id="disk-brand">
+                                                <option value="-1">марка</option>
+                                                <option value="0">Mazda</option>
+                                            </select>
+                                            <select class="select-params second hidden" id="disk-model">
+                                                <option value="-1">модель</option>
+                                                <option value="0">6.0</option>
+                                            </select>
+                                            <select class="select-params third hidden" id="disk-year">
+                                                <option value="-1">год выпуска</option>
+                                                <option value="0">2014</option>
+                                            </select>
+                                            <select class="select-params fourth hidden" id="disk-modification">
+                                                <option value="-1">модификация</option>
+                                                <option value="0">i06</option>
+                                            </select>
+                                        </div>
+                                        <div class="set-of-params checklists hidden disabled">
+                                            <h4>Допустимые размеры</h4>
+                                            <div class="checkbox-list">
+                                                <div class="fake-table">
+                                                    <div class="fake-tr">
+                                                        <div class="fake-td">
+                                                            <ul>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>5×14 5×100 ET45</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>6×15 5×100 ET38</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>7×15 5×100 ET38</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="fake-td">
+                                                            <ul>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>7×16 5×100 ET38</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>7×17 5×100 ET37</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>7,5×18 5×100 ET35</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="set-of-params availablelist hidden disabled">
+                                            <h4>Наличие</h4>
+                                            <ul>
+                                                <li>
+                                                    <label class="checkbox-label">
+                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                        <span>Доставка 7 дней</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="checkbox-label">
+                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                        <span>Наличие Ростов-на-Дону</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="for-buttons">
+                                            <a href="javascript:void(0);" class="btn-clean-filter" id="btn-clean-filter-disk-auto">
+                                                <em></em>
+                                                <span>Сбросить фильтр</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="choose-content" id="choose-disk-by-params">
+                                        <div class="set-of-params">
+                                            <div class="row">
+                                                <label class="pull-left">Ширина</label>
+                                                <label class="pull-right">Диаметр</label>
+                                                <div class="micro-set">
+                                                    <select class="half-filter">
+					                                    <option value="-1"></option>
+											            <option value="654840">3</option>
+											            <option value="654664">4</option>
+											            <option value="654687">5</option>
+											            <option value="654720">6</option>
+									                </select>
+                                                    <div class="cross"></div>
+                                                    <select class="half-filter">
+					                                    <option value="-1"></option>
+											            <option value="654887">12</option>
+											            <option value="654665">98</option>
+											            <option value="654857">98 </option>
+											            <option value="654674">100</option>
+											            <option value="654731">105</option>
+											            <option value="654678">108</option>
+											            <option value="654717">110</option>
+											            <option value="654705">112</option>
+											            <option value="654906">114,3 </option>
+											            <option value="654686">114,3</option>
+											            <option value="654776">115</option>
+											            <option value="654818">118</option>
+											            <option value="654760">120</option>
+											            <option value="654810">127</option>
+											            <option value="654789">130</option>
+											            <option value="654712">139,7</option>
+											            <option value="654774">150</option>
+											            <option value="654822">160</option>
+											            <option value="654831">165</option>
+									                </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label>сверловка</label>
+                                                <div class="micro-set">
+                                                    <select>
+					                                    <option></option>
+											            <option value="654840">3</option>
+											            <option value="654664">4</option>
+											            <option value="654687">5</option>
+											            <option value="654720">6</option>
+									                </select>
+                                                    <div class="cross"></div>
+                                                    <select style="display: none;">
+					                                    <option></option>
+											            <option value="654887">12</option>
+											            <option value="654665">98</option>
+											            <option value="654857">98 </option>
+											            <option value="654674">100</option>
+											            <option value="654731">105</option>
+											            <option value="654678">108</option>
+											            <option value="654717">110</option>
+											            <option value="654705">112</option>
+											            <option value="654906">114,3 </option>
+											            <option value="654686">114,3</option>
+											            <option value="654776">115</option>
+											            <option value="654818">118</option>
+											            <option value="654760">120</option>
+											            <option value="654810">127</option>
+											            <option value="654789">130</option>
+											            <option value="654712">139,7</option>
+											            <option value="654774">150</option>
+											            <option value="654822">160</option>
+											            <option value="654831">165</option>
+									                </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <select class="select-params">
+                                                    <option value="-1">вылет</option>
+                                                    <option value="0">2014</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="set-of-params availablelist disabled">
+                                            <h4>Производители <a href="javascript:void(0);" class="link-show-all" id="link-show-all">[показать всех]</a><a href="javascript:void(0);" class="link-show-all" id="link-show-main">[показать основных]</a></h4>
+                                            <div class="checkbox-list">
+                                                <div class="fake-table">
+                                                    <div class="fake-tr">
+                                                        <div class="fake-td">
+                                                            <ul>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>ACURA</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>AUDI</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>BMW</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="fake-td">
+                                                            <ul>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>ACURA</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>AUDI</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>BMW</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fake-tr" id="full-list-of-manufactors">
+                                                        <div class="fake-td">
+                                                            <ul>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>ACURA</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>AUDI</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>BMW</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="fake-td">
+                                                            <ul>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>ACURA</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>AUDI</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="checkbox-label">
+                                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                                        <span>BMW</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="set-of-params availablelist disabled">
+                                            <h4>Наличие</h4>
+                                            <ul>
+                                                <li>
+                                                    <label class="checkbox-label">
+                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                        <span>Доставка 7 дней</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="checkbox-label">
+                                                        <em class="checkbox"><input type="checkbox" value="1"></em>
+                                                        <span>Наличие Ростов-на-Дону</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="for-buttons">
+                                            <a href="javascript:void(0);" class="btn-clean-filter" id="btn-clean-filter-disk-param">
+                                                <em></em>
+                                                <span>Сбросить фильтр</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="banner">
+                                    <a href="#" class="avito"><img src="img/banner.jpg" alt="" /></a>
+                                </div>
+                                <div class="seo">
+                                    <p>Купить летние и зимние шины в Ростове-на-Дону. Резина Ростов по доступным ценам!</p>
+                                    <p>Все автовладельцы выбирают резину в зависимости от различных параметров. Одни решают купить шины основываясь на практичности и экономичности, а других интересует только дорогая авто резина известных фирм.</p>
+                                    <p>Выбор шин очень ответственное мероприятие, от этого зависит безопасность на дороге. Решили купить шины на авто? Тогда Вы как раз по адресу.</p>
+                                    <p>Ассортимент нашего магазина представлен различной автомобильной резиной: зимние шины и летние шины. Все нужно делать вовремя, и поэтому самое время купить летнюю резину, а перед приближением зимы и плохих погодных условий – купить зимние шины.</p>
+                                    <p>В нашем каталоге представлены известные марки производителей автошин, такие как:</p>
+                                    <p><strong>Amtel</strong><br /><strong>Continental</strong><br /><strong>Nokian</strong><br /><strong>Bridgestone</strong><br /><strong>и многие другие.</strong></p>
+                                    <p>Для помощи в выборе и покупке резины на сайте реализован шинный калькулятор и фильтр подбора товара. С ним выбор шин станет гораздо легче и практичнее.</p>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="in">
+                                    <div class="catalog-header">
+                                        <h1>диски</h1>
+                                        <div class="button-set">
+                                            <a href="#" class="btn-mini first-child">по цене</a>
+                                            <a href="#" class="btn-mini">по названию</a>
+                                            <a href="#" class="btn-mini last-child active">по бренду</a>
+                                        </div>
+                                        <div class="button-set">
+                                            <a href="#" class="btn-mini btn-glyph-list active"></a>
+                                            <a href="#" class="btn-mini btn-glyph-th"></a>
+                                        </div>
+                                    </div>
+                                    <div class="tile-list">
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="tile">
+                                            <span class="tile-main">
+                                                <em class="tile-img"><img src="img/tmp/g4.jpg" alt="" /></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                            <span class="tile-overlay">
+                                                <em class="tile-img"><em class="tile-add">в корзину</em></em>
+                                                <em class="tile-price">2 780 руб</em>
+                                                <em class="tile-param">Milk 15”</em>
+                                            </span>
+                                        </a>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="fake-table">
+                        <div class="fake-tr">
+                            <div class="fake-td copyrights">
+                                <span class="label">&copy; 2014</span>
+                            </div>
+                            <div class="fake-td calling">
+                                <div class="label">+7(863) 294-66-88</div>
+                                <a href="javascript:void(0);" class="btn-footer link-call-popup">заказать звонок</a>
+                            </div>
+                            <div class="fake-td contacts">
+                                <div class="label">г. ростов-на-дону  ул.Промышленная, д.11, стр.3</div>
+                                <a href="#" class="on-the-map">
+                                    <span class="on-the-map-left">на карте</span>
+                                    <span class="on-the-map-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

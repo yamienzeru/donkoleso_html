@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Корзина</title>
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="shortcut icon" href="favicon.png" />
+        <link href="css/fonts.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/styleIEOld.css" /><![endif]-->
+        <!--[if IE 8]><link rel="stylesheet" type="text/css" href="css/styleIE8.css" /><![endif]-->
+        <!--[if IE 9]><link rel="stylesheet" type="text/css" href="css/styleIE9.css" /><![endif]-->
+        <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="js/jquery.multiselect.js"></script>
+        <script src="js/platform.js"></script>
+        <script src="js/jquery.bxslider.min.js"></script>
+        <script src="js/js.js"></script>
+        <script type="text/javascript">
+            var browser = platform.name.toLowerCase();
+            var os = platform.os.family.toLowerCase();
+            if (browser == "safari") {
+                addCssLink("css/styleSafari.css");
+            }
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 8]><div class="support">Sorry, we don't support this version of Internet Explorer.<br/><a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie">Please, update your browser</a> or use another.</div><![endif]-->
+        <div class="stick-toolbar">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="left">
+                        <span>для сравнения</span>
+                        <em class="num" id="goods-for-comp">15</em>
+                        <span>товаров</span>
+                        <a href="#" class="btn-mini">Cравнить</a>
+                    </div>
+                    <div class="right">
+                        <span>В корзине</span>
+                        <em class="num" id="shop-cart-goods-count">3</em>
+                        <span>товара на</span>
+                        <em class="num"><i id="shop-cart-amount-price">6 215</i> руб</em>
+                        <a href="#" class="btn-mini">Оформить заказ</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="white-popup" id="call-popup">
+            <div class="fake-table">
+                <div class="fake-tr">
+                    <div class="fake-td">
+                        <div class="call-popup">
+                            <div class="top-part">
+                                <div class="right"><a href="javascript:void(0);" class="close-link" title="Закрыть"></a></div>
+                                <div class="left"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="data-part">
+                                <form action="#" method="post">
+                                    <div class="manager">Наш менеджер<br />свяжется с Вами через<br />несколько минут</div>
+                                    <div class="fields-set">
+                                        <input type="text" class="input" placeholder="ИМЯ *" title="Имя (обязательное поле)" />
+                                        <input type="text" class="input" placeholder="КОНТАКТНЫЙ ТЕЛЕФОН *" title="Контактный телефон (обязательное поле)" />
+                                        <input type="text" class="input" placeholder="E-MAIL" title="E-MAIL" />
+                                        <textarea cols="" rows="" placeholder="СООБЩЕНИЕ *" class="textarea" title="Сообщение (обязательное поле)"></textarea>
+                                        <div class="error">проверьте, правильно ли введены данные!</div>
+                                    </div>
+                                    
+                                    <div class="for-buttons">
+                                        <button class="wbutton">отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="header">
+                    <a class="logo" title="Автолюбитель">&nbsp;</a>
+                    <div class="menu-dark">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div class="left">
+                                    <ul>
+                                        <li><a href="#">Оплата и доставка</a></li>
+                                        <li><a href="#">Советы</a></li>
+                                        <li><a href="#">Покупателям</a></li>
+                                        <li class="with-submenu">
+                                            <a href="javascript:void(0);">Войти</a>
+                                            <ul class="submenu">
+                                                <li><a href="#">войти</a></li>
+                                                <li><a href="#">зарегистрироваться</a></li>
+                                            </ul>
+                                        </li>                                                              
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li><a href="#">Шинный калькулятор</a></li>
+                                        <li><a href="#">Новости</a></li>
+                                        <li><a href="#">Контакты</a></li>
+                                        <li><a href="#" class="icon-shopcart"><em>4</em></a></li>
+                                    </ul>
+                                                  
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-light">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div class="left">
+                                    <ul>
+                                        <li><a href="#">Шины</a></li>
+                                        <li><a href="#">Диски</a></li>
+                                        <li><a href="#">Спецпредложения</a></li>          
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li><span class="phone">+7(863) 294-66-88</span></li>
+                                        <li>
+                                            <div class="call-requesting">
+                                                <a href="javascript:void(0);" class="btn-call link-call-popup">заказать звонок</a>
+                                                <em>с 9 до 18</em>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <h1>Корзина</h1>
+                            <div class="shopping-cart">
+                                <table class="shopping-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-image">&nbsp;</th>
+                                            <th class="col-title">Название</th>
+                                            <th class="col-size">Размер</th>
+                                            <th class="col-season">Сезон</th>
+                                            <th class="col-price">Цена</th>
+                                            <th class="col-count">Количество</th>
+                                            <th class="col-amount">Итоговая цена</th>
+                                            <th class="col-remove">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-image">
+                                                <a href="#"><img src="img/tmp/g1.jpg" alt="" /></a>
+                                            </td>
+                                            <td class="col-title"><a href="#">Replay a69</a></td>
+                                            <td class="col-size"><span>8×19</span></td>
+                                            <td class="col-season"><span class="summer"><em></em><i>Летние</i></span></td>
+                                            <td class="col-price"><span class="price" data-price="2000">2 000</span> руб</td>
+                                            <td class="col-count">
+                                                <div class="counter">
+                                                    <a href="javascript:void(0);" class="plus">+</a>
+                                                    <a href="javascript:void(0);" class="minus">-</a>
+                                                    <span class="counter-index"><em data-count="2">2</em> шт</span>
+                                                </div>
+                                            </td>
+                                            <td class="col-amount"><span class="price" data-price="4000">4 000</span> руб</td>
+                                            <td class="col-remove"><a href="javascript:void(0);" class="link-remove-product">&nbsp;</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-image">
+                                                <a href="#"><img src="img/tmp/g2.jpg" alt="" /></a>
+                                            </td>
+                                            <td class="col-title"><a href="#">Replay a69</a></td>
+                                            <td class="col-size"><span>8×19</span></td>
+                                            <td class="col-season"><span class="winter"><em></em><i>Зимние</i></span></td>
+                                            <td class="col-price"><span class="price" data-price="1000">1 000</span> руб</td>
+                                            <td class="col-count">
+                                                <div class="counter">
+                                                    <a href="javascript:void(0);" class="plus">+</a>
+                                                    <a href="javascript:void(0);" class="minus">-</a>
+                                                    <span class="counter-index"><em data-count="1">1</em> шт</span>
+                                                </div>
+                                            </td>
+                                            <td class="col-amount"><span class="price" data-price="1000">1 000</span> руб</td>
+                                            <td class="col-remove"><a href="javascript:void(0);" class="link-remove-product">&nbsp;</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-image">
+                                                <a href="#"><img src="img/tmp/g3.jpg" alt="" /></a>
+                                            </td>
+                                            <td class="col-title"><a href="#">Replay a69</a></td>
+                                            <td class="col-size"><span>8×19</span></td>
+                                            <td class="col-season"><span class="demi"><em></em><i>Демисезонные</i></span></td>
+                                            <td class="col-price"><span class="price" data-price="1000.55">1 000.55</span> руб</td>
+                                            <td class="col-count">
+                                                <div class="counter">
+                                                    <a href="javascript:void(0);" class="plus">+</a>
+                                                    <a href="javascript:void(0);" class="minus">-</a>
+                                                    <span class="counter-index"><em data-count="1">1</em> шт</span>
+                                                </div>
+                                            </td>
+                                            <td class="col-amount"><span class="price" data-price="1000.55">1 000.55</span> руб</td>
+                                            <td class="col-remove"><a href="javascript:void(0);" class="link-remove-product">&nbsp;</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="summary">
+                                    <span class="caption">Итого:</span>
+                                    <span class="total-price"><span class="amout-payment" data-price="6000.55">6 000.55</span> руб</span>
+                                </div>
+                                
+                            </div>
+                            <div class="shopping-cart-empty">Корзина пуста.</div>
+
+                            <div class="shipping-information">
+                                <div class="column col-1">
+                                    <div class="fields-set">
+                                        <input type="text" class="input with-error" placeholder="ИМЯ *" title="ИМЯ *" />
+                                        <input type="text" class="input" placeholder="КОНТАКТНЫЙ ТЕЛЕФОН *" title="КОНТАКТНЫЙ ТЕЛЕФОН *" />
+                                        <input type="text" class="input" placeholder="E-MAIL *" title="E-MAIL *" />
+                                        <div class="error">Неправильно введены данные!</div>
+                                    </div>
+                                </div>
+                                <div class="column col-2">
+                                    <div class="fields-set">
+                                        <input type="text" class="input" placeholder="АДРЕС ДОСТАВКИ" title="АДРЕС ДОСТАВКИ" />
+                                        <textarea cols="10" rows="10" class="textarea" placeholder="КОММЕНТАРИЙ К ЗАКАЗУ" title="КОММЕНТАРИЙ К ЗАКАЗУ"></textarea>
+                                    </div>
+                                </div>
+                                <div class="column col-3">
+                                    <a href="#" class="button">завершить</a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="fake-table">
+                        <div class="fake-tr">
+                            <div class="fake-td copyrights">
+                                <span class="label">&copy; 2014</span>
+                            </div>
+                            <div class="fake-td calling">
+                                <div class="label">+7(863) 294-66-88</div>
+                                <a href="javascript:void(0);" class="btn-footer link-call-popup">заказать звонок</a>
+                            </div>
+                            <div class="fake-td contacts">
+                                <div class="label">г. ростов-на-дону  ул.Промышленная, д.11, стр.3</div>
+                                <a href="#" class="on-the-map">
+                                    <span class="on-the-map-left">на карте</span>
+                                    <span class="on-the-map-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </body>
+</html>

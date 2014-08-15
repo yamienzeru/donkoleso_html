@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Главная</title>
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="shortcut icon" href="favicon.png" />
+        <link href="css/fonts.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/styleIEOld.css" /><![endif]-->
+        <!--[if IE 8]><link rel="stylesheet" type="text/css" href="css/styleIE8.css" /><![endif]-->
+        <!--[if IE 9]><link rel="stylesheet" type="text/css" href="css/styleIE9.css" /><![endif]-->
+        <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="js/jquery.multiselect.js"></script>
+        <script src="js/platform.js"></script>
+        <script src="js/jquery.bxslider.min.js"></script>
+        <script src="js/js.js"></script>
+        <script type="text/javascript">
+            var browser = platform.name.toLowerCase();
+            var os = platform.os.family.toLowerCase();
+            if (browser == "safari") {
+                addCssLink("css/styleSafari.css");
+            }
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 8]><div class="support">Sorry, we don't support this version of Internet Explorer.<br/><a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie">Please, update your browser</a> or use another.</div><![endif]-->
+        <div class="white-popup" id="call-popup">
+            <div class="fake-table">
+                <div class="fake-tr">
+                    <div class="fake-td">
+                        <div class="call-popup">
+                            <div class="top-part">
+                                <div class="right"><a href="javascript:void(0);" class="close-link" title="Закрыть"></a></div>
+                                <div class="left"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="data-part">
+                                <form action="#" method="post">
+                                    <div class="manager">Наш менеджер<br />свяжется с Вами через<br />несколько минут</div>
+                                    <div class="fields-set">
+                                        <input type="text" class="input" placeholder="ИМЯ *" title="Имя (обязательное поле)" />
+                                        <input type="text" class="input" placeholder="КОНТАКТНЫЙ ТЕЛЕФОН *" title="Контактный телефон (обязательное поле)" />
+                                        <input type="text" class="input" placeholder="E-MAIL" title="E-MAIL" />
+                                        <textarea cols="" rows="" placeholder="СООБЩЕНИЕ *" class="textarea" title="Сообщение (обязательное поле)"></textarea>
+                                        <div class="error">проверьте, правильно ли введены данные!</div>
+                                    </div>
+                                    
+                                    <div class="for-buttons">
+                                        <button class="wbutton">отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="header">
+                    <a class="logo" title="Автолюбитель">&nbsp;</a>
+                    <div class="menu-dark">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div class="left">
+                                    <ul>
+                                        <li><a href="#">Оплата и доставка</a></li>
+                                        <li><a href="#">Советы</a></li>
+                                        <li><a href="#">Покупателям</a></li>
+                                        <li class="with-submenu">
+                                            <a href="javascript:void(0);">Войти</a>
+                                            <ul class="submenu">
+                                                <li><a href="#">войти</a></li>
+                                                <li><a href="#">зарегистрироваться</a></li>
+                                            </ul>
+                                        </li>                                                              
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li><a href="#">Шинный калькулятор</a></li>
+                                        <li><a href="#">Новости</a></li>
+                                        <li><a href="#">Контакты</a></li>
+                                        <li><a href="#" class="icon-shopcart"><em>4</em></a></li>
+                                    </ul>
+                                                  
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-light">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div class="left">
+                                    <ul>
+                                        <li><a href="#">Шины</a></li>
+                                        <li><a href="#">Диски</a></li>
+                                        <li><a href="#">Спецпредложения</a></li>          
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li><span class="phone">+7(863) 294-66-88</span></li>
+                                        <li>
+                                            <div class="call-requesting">
+                                                <a href="javascript:void(0);" class="btn-call link-call-popup">заказать звонок</a>
+                                                <em>с 9 до 18</em>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-form">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div class="searching">
+                                <div class="left tab active">
+                                    <div class="overlay"></div>
+                                    <div class="form">
+                                        <div class="select-set">
+                                            <select class="mini-search-select">
+					                            <option>ширина</option>
+											    <option value="655432">20</option>
+											    <option value="655436">30</option>
+											    <option value="655419">31</option>
+											    <option value="655440">32</option>
+											    <option value="655423">33</option>
+											    <option value="655445">35</option>
+											    <option value="655447">37</option>
+											    <option value="655373">135</option>
+											    <option value="655376">145</option>
+											    <option value="655382">155</option>
+											    <option value="655385">165</option>
+											    <option value="655387">175</option>
+											    <option value="655389">185</option>
+											    <option value="655395">195</option>
+											    <option value="655398">205</option>
+											    <option value="655400">215</option>
+											    <option value="655403">225</option>
+											    <option value="655406">235</option>
+											    <option value="655409">245</option>
+											    <option value="655410">255</option>
+											    <option value="655411">265</option>
+											    <option value="655414">275</option>
+											    <option value="655416">285</option>
+											    <option value="655417">295</option>
+											    <option value="655418">305</option>
+											    <option value="655421">315</option>
+											    <option value="655422">325</option>
+									        </select>
+                                            <select class="mini-search-select">
+					                            <option>высота</option>
+											    <option value="655437">9,5</option>
+											    <option value="655439">10,5</option>
+											    <option value="655442">10,5</option>
+											    <option value="655420">10,5</option>
+											    <option value="655441">11,5</option>
+											    <option value="655449">12,5</option>
+											    <option value="655446">12,5</option>
+											    <option value="655427">12C</option>
+											    <option value="655444">12,5</option>
+											    <option value="655448">12,5</option>
+											    <option value="655443">12,0</option>
+											    <option value="655424">12,5</option>
+											    <option value="655450">13,5</option>
+											    <option value="655426">13</option>
+											    <option value="655390">14C</option>
+											    <option value="655429">14C</option>
+											    <option value="655430">14C</option>
+											    <option value="655438">25</option>
+											    <option value="655412">30</option>
+											    <option value="655407">35</option>
+											    <option value="655404">40</option>
+											    <option value="655396">45</option>
+											    <option value="655397">50</option>
+											    <option value="655388">55</option>
+											    <option value="655433">60</option>
+											    <option value="655383">60</option>
+											    <option value="655377">65</option>
+											    <option value="655379">70</option>
+											    <option value="655392">75</option>
+											    <option value="655374">80</option>
+											    <option value="655431">85</option>
+											    <option value="655434">90</option>
+									        </select>
+                                            <select class="mini-search-select">
+					                            <option>диаметр</option>
+											    <option value="655381">12 C</option>
+											    <option value="655375">12</option>
+											    <option value="655380">13</option>
+											    <option value="655428">13 C</option>
+											    <option value="655384">14</option>
+											    <option value="655386">14 C</option>
+											    <option value="655394">15 C</option>
+											    <option value="655378">15</option>
+											    <option value="655391">16</option>
+											    <option value="655393">16 C</option>
+											    <option value="655399">17</option>
+											    <option value="655402">17 C</option>
+											    <option value="655401">18</option>
+											    <option value="655405">19</option>
+											    <option value="655408">20</option>
+											    <option value="655413">21</option>
+											    <option value="655415">22</option>
+											    <option value="655435">24</option>
+									        </select>
+                                        </div>
+                                        <div class="checkbox-list">
+                                            <ul class="col-1">
+                                                <li>
+                                                    <label class="checkbox-label">
+                                                        <em class="checkbox on"><input type="checkbox" value="1" /></em>
+                                                        <span class="summer"><em></em>лето</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="checkbox-label">
+                                                        <em class="checkbox"><input type="checkbox" value="1" /></em>
+                                                        <span class="winter"><em></em>зима</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <label class="checkbox-label">
+                                                        <em class="checkbox"><input type="checkbox" value="1" /></em>
+                                                        <span>легковые</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="checkbox-label">
+                                                        <em class="checkbox"><input type="checkbox" value="1" /></em>
+                                                        <span>грузовые</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="for-buttons">
+                                            <button class="middle-button">подобрать</button>
+                                        </div>
+                                    </div>
+                                    <div class="tire"><div></div></div>
+                                </div>
+                                <div class="right tab disabled">
+                                    <div class="overlay"></div>
+                                    <div class="form">
+                                        <div class="select-set">
+                                            <select class="mini-search-select">
+					                            <option>ширина</option>
+											    <option value="654786">4,5</option>
+											    <option value="654662">5,5</option>
+											    <option value="654764">5</option>
+											    <option value="654680">6,5</option>
+											    <option value="654670">6</option>
+											    <option value="654690">7</option>
+											    <option value="654718">7,5</option>
+											    <option value="654745">8</option>
+											    <option value="654739">8,5</option>
+											    <option value="654801">9,5</option>
+											    <option value="654743">9</option>
+											    <option value="654752">10</option>
+											    <option value="654804">10,5</option>
+											    <option value="654805">11,5</option>
+											    <option value="654803">11</option>
+									        </select>
+                                            <select class="mini-search-select">
+					                            <option>диаметр</option>
+											    <option value="654663">13</option>
+											    <option value="654671">14</option>
+											    <option value="654681">15</option>
+											    <option value="654691">16</option>
+											    <option value="654719">17</option>
+											    <option value="654740">18</option>
+											    <option value="654758">19</option>
+											    <option value="654744">20</option>
+											    <option value="654795">21</option>
+											    <option value="654807">22</option>
+									        </select>
+                                        </div>
+                                        <div class="row">
+                                            <label>сверловка</label>
+                                            <div class="micro-set">
+                                                <select>
+					                                <option></option>
+											        <option value="654840">3</option>
+											        <option value="654664">4</option>
+											        <option value="654687">5</option>
+											        <option value="654720">6</option>
+									            </select>
+                                                <div class="cross"></div>
+                                                <select>
+					                                <option></option>
+											        <option value="654887">12</option>
+											        <option value="654665">98</option>
+											        <option value="654857">98 </option>
+											        <option value="654674">100</option>
+											        <option value="654731">105</option>
+											        <option value="654678">108</option>
+											        <option value="654717">110</option>
+											        <option value="654705">112</option>
+											        <option value="654906">114,3 </option>
+											        <option value="654686">114,3</option>
+											        <option value="654776">115</option>
+											        <option value="654818">118</option>
+											        <option value="654760">120</option>
+											        <option value="654810">127</option>
+											        <option value="654789">130</option>
+											        <option value="654712">139,7</option>
+											        <option value="654774">150</option>
+											        <option value="654822">160</option>
+											        <option value="654831">165</option>
+									            </select>
+                                            </div>
+                                        </div>
+                                        <div class="for-buttons">
+                                            <button class="middle-button">подобрать</button>
+                                        </div>
+                                    </div>
+                                    <div class="disc"><div></div></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs">
+                        <div class="tab left active">
+                            <h1>Подобрать шины<br />по марке авто</h1>
+                        </div>
+                        <div class="tab right">
+                            <h2>Подобрать диски<br />по марке авто</h2>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="why">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div class="column">
+                                <h3>покупать у нас выгодно</h3>
+                            </div>
+                            <div class="column">
+                                <div class="reason low-cost">
+                                    <div class="icon"></div>
+                                    <p>Самые низкие цены. найдете дешевле – позвоните</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="reason flex">
+                                    <div class="icon"></div>
+                                    <p>Есть всё. Всегда. нет сейчас – привезем для Вас</p>
+                                </div>
+                            </div>
+                            <div class="column last-child">
+                                <div class="reason love">
+                                    <div class="icon"></div>
+                                    <p>Мы любим свое дело поэтому знаем о нем все</p>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="news">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <h3>Новости <a href="#" class="btn-mini">все новости</a></h3>
+                            <ul class="news-list">
+                                <li>
+                                    <a href="#">
+                                        <span class="date">6 июня 2014</span>
+                                        <span class="desc">Медведев запретил чиновникам покупать иномарки зарубежной сборки</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="date">7 июня 2014</span>
+                                        <span class="desc">В Москве прошла гонка DTM: победил бельгиец на BMW, Петров — 18-й</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="date">19 июня 2014</span>
+                                        <span class="desc">Последние дни наступают. Mitsubishi прекращает выпуск Lancer Evolution с двухдисковым «роботом»</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="date">23 июня 2014</span>
+                                        <span class="desc">Toyota представила первый полноприводный гибридный премиум-седан Toyota Crown</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div class="column col-1">
+                                <h3>О магазине</h3>
+                            </div>
+                            <div class="column col-2">
+                                <p>В ассортименте нашего интернет-магазина представлен широкий выбор покрышек ведущих зарубежных и  отечественных производителей <a href="#">Barum</a>, <a href="#">BFGoodrich</a>, <a href="#">BRIDGTONE</a>, <a href="#">CONTINENTAL</a>, Dunlop, Fulda, GOODYEAR, Hankook, Kumho, Matador, Maxxis, MICHELIN, Nexen, NOKIAN TYRES, Pirelli, Sava, Tigar, YOKOHAMA. </p>
+                            </div>
+                            <div class="column col-3">
+                                <p>Также представлен ассортимент качественных автодисков дисков <a href="#">REPLICA</a>, <strong>REPLIKA</strong>, <strong>REPLAY</strong>, <a href="#">LS</a>, ENKEI. В нашем магазине Вы можете приобрести шины и диски как для легковых авто, небольших грузовиков, микроавтобусов, так и конечно для внедорожников. Продажа осуществляется как за наличный, так и за безналичный расчет.</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="fake-table">
+                        <div class="fake-tr">
+                            <div class="fake-td copyrights">
+                                <span class="label">&copy; 2014</span>
+                            </div>
+                            <div class="fake-td calling">
+                                <div class="label">+7(863) 294-66-88</div>
+                                <a href="javascript:void(0);" class="btn-footer link-call-popup">заказать звонок</a>
+                            </div>
+                            <div class="fake-td contacts">
+                                <div class="label">г. ростов-на-дону  ул.Промышленная, д.11, стр.3</div>
+                                <a href="#" class="on-the-map">
+                                    <span class="on-the-map-left">на карте</span>
+                                    <span class="on-the-map-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

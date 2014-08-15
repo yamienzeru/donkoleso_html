@@ -1,0 +1,22 @@
+﻿.news h3 .btn-mini {
+    top:-4px;
+}
+.footer .contacts .label {
+    position:relative;
+    top:-6px;
+}
+.search-form .searching .form .checkbox-list ul {
+    width:95px;
+}
+.search-form .searching .form .checkbox-list ul.col-1 {
+    width:90px;
+}
+h1 .btn-middle {
+    top:-14px;
+}
+.page-controls {
+    float:right;
+}
+    .page-controls .btn-mini, .page-controls .paging {
+        float:left;
+    }

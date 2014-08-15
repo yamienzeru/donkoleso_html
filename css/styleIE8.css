@@ -1,0 +1,65 @@
+﻿.popup, .stick-toolbar {
+    background:url(../img/ie8/o.png) repeat 50% 50%;
+}
+.white-popup {
+    background:url(../img/ie8/w.png) repeat 50% 50%;
+}
+.header .logo {
+    background-image:url(../img/ie8/logo.png);
+}
+.search-form .searching .form .micro-set .cross {
+    background-image:url(../img/ie8/cross.png);
+}
+.search-form .searching .disabled .form .micro-set .cross,
+.sidebar-filter .micro-set .cross {
+    background-image:url(../img/ie8/cross-off.png);
+}
+.btn-close {
+    background-image:url(../img/ie8/close.png);
+}
+.btn-close:hover {
+    background-image:url(../img/ie8/close-on.png);
+}
+.checkbox.on {
+    background-image:url(../img/ie8/check-on.png);
+}
+.disabled .checkbox.on {
+    background-image:url(../img/ie8/check.png);
+}
+.ui-multiselect {
+    background-image:url(../img/ie8/dll.png);
+}
+.disabled .ui-multiselect {
+    background-image:url(../img/ie8/dll-off.png);
+}
+.on-the-map, .btn-footer, .btn-mini, .btn-call {line-height:20px !important;}
+.white-popup .manager {
+    letter-spacing:0;
+}
+.news-details ul li {
+    background-image:url(../img/ie8/middot.png);
+}
+    .news-navigation a, .slide-prev, .slide-next {
+        background-image:url(../img/ie8/navi-arrows.png);
+    }
+    .shopping-table .link-remove-product {
+        background-image:url(../img/ie8/remove.png);
+    }
+.set-of-params .ui-multiselect {
+    background-image: url(../img/ie8/dll-off.png);
+}
+.set-of-params .ui-multiselect.ui-state-hover, .set-of-params .ui-multiselect.ui-state-active {
+    background-image: url(../img/ie8/dll.png);
+}
+    .btn-clean-filter em {
+        background-image:url(../img/ie8/clean.png); 
+    }
+    .btn-clean-filter:hover em {
+        background-image:url(../img/ie8/clean-on.png);
+    }
+    .set-of-params.disabled .checkbox-label:hover .checkbox {
+        background-image:url(../img/ie8/check-on.png);
+    }
+    .set-of-params.disabled .checkbox-label.on .checkbox {
+        background-image:url(../img/ie8/check-on-w.png);
+    }
