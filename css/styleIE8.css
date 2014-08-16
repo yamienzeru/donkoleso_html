@@ -63,3 +63,27 @@
     .set-of-params.disabled .checkbox-label.on .checkbox {
         background-image:url(../img/ie8/check-on-w.png);
     }
+    .compare-item .link-remove-item {
+        background-image:url(../img/ie8/close-on-1.png);
+    }
+.compare-item .compare-tr .th {
+    line-height:36px;
+}
+    .compare-item .compare-tr .th strong {
+        line-height:34px;
+    }
+    .compare-item .compare-tr .th.th-3 {
+        line-height:42px;
+    }
+    .social-networks a.vk {
+        background-image:url(../img/ie8/vk.png);
+    }
+    .social-networks a.fb {
+        background-image:url(../img/ie8/fb.png);
+    }
+    .social-networks a.twi {
+        background-image:url(../img/ie8/twi.png);
+    }
+    .social-networks a.od {
+        background-image:url(../img/ie8/od.png);
+    }

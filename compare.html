@@ -6,15 +6,20 @@
         <link rel="shortcut icon" href="favicon.png" />
         <link href="css/fonts.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link href="css/jquery.jscrollpane.css" rel="stylesheet" />
         <!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/styleIEOld.css" /><![endif]-->
         <!--[if IE 8]><link rel="stylesheet" type="text/css" href="css/styleIE8.css" /><![endif]-->
         <!--[if IE 9]><link rel="stylesheet" type="text/css" href="css/styleIE9.css" /><![endif]-->
         <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
-        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
         <script src="js/jquery.multiselect.js"></script>
         <script src="js/platform.js"></script>
         <script src="js/jquery.bxslider.min.js"></script>
+        <script src="js/jquery.mousewheel.js"></script>
+        <script src="js/mwheelIntent.js"></script>
+        <script src="js/jquery.jscrollpane.min.js"></script>
+        <script src="js/cloud-zoom.1.0.3.js"></script>
         <script src="js/js.js"></script>
         <script type="text/javascript">
             var browser = platform.name.toLowerCase();
@@ -140,7 +145,432 @@
                 <div class="page compare">
                     <h1>сравнение товаров</h1>
                     <div class="compare-panel">
-                        <div class="compare-side"></div>
+                        <div class="compare-side">
+                            <div class="compare-inner">
+                                <div class="compare-switch">
+                                    <div class="button-set">
+                                        <a href="#" class="btn-mini first-child">шины</a>
+                                        <a href="#" class="btn-mini active last-child">диски</a>
+                                    </div>                                        
+                                </div>
+                                <div class="compare-tr">
+                                    <div class="th">Цена</div>
+                                    <div class="th">Название</div>
+                                    <div class="th">Наличие</div>
+                                    <div class="th">Ширина</div>
+                                    <div class="th">Диаметр</div>
+                                    <div class="th">Отверстий</div>
+                                    <div class="th">Вылет</div>
+                                    <div class="th th-3">Диаметр центрального отверстия</div>
+                                    <div class="th">Производитель</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="compare-list">
+                            <div id="scrollpane">
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>1 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>2 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>3 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>4 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>5 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>6 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>7 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>8 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>9 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>10 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>11 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>12 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>13 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>14 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>15 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>16 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>17 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>19 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>20 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                                <div class="compare-item">
+                                    <div class="compare-top">
+                                        <a href="javascript:void(0);" class="link-remove-item"></a>
+                                        <div class="compare-img"><img src="img/tmp/g1.jpg" alt="" /></div>
+                                        <div class="compare-buttons">
+                                            <a href="#" class="btn-mini">В корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="compare-tr">
+                                        <div class="th"><strong>21 570 руб</strong></div>
+                                        <div class="th"><a href="#">REPLAY B114</a></div>
+                                        <div class="th">2 шт.</div>
+                                        <div class="th">8</div>
+                                        <div class="th">18</div>
+                                        <div class="th">5</div>
+                                        <div class="th">30</div>
+                                        <div class="th th-3">72,6</div>
+                                        <div class="th">REPLAY</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
                     </div>
                 </div>
             </div>

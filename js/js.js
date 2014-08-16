@@ -4,9 +4,13 @@ var roundmapAnimation = false;
 $(function () {
     $(window).resize(function () {
         fixStickPanelPosition();
+        fixCompareContainer();
+        if ($("#scrollpane").length) $("#scrollpane").jScrollPane().data('jsp').reinitialise();
     });
     $(window).bind('orientationchange', function () {
         fixStickPanelPosition();
+        fixCompareContainer();
+        if ($("#scrollpane").length) $("#scrollpane").jScrollPane().data('jsp').reinitialise();
     });
     $("select").each(function () {
         var css = $(this).attr("class");
@@ -32,8 +36,10 @@ $(function () {
             $(".search-form .searching .tab").toggleClass("disabled");
         }
     });
+    fixCompareContainer();
     $(window).load(function () {
-        $("html").addClass("fired");
+        $("html").addClass("fired");     
+        if ($("#scrollpane").length) $("#scrollpane").jScrollPane();
     });
     $(".checkbox-label").each(function () {
         var is_checked = $(this).find("input:first:checked").length;
@@ -332,6 +338,25 @@ $(function () {
         $(this).hide();
         $("#link-show-all").show();
     });
+
+    $(".compare-item .link-remove-item").on("click",function () {
+        $(this).parents(".compare-item").remove();
+        $("#scrollpane").jScrollPane().data('jsp').destroy();
+        fixCompareContainer();
+        $("#scrollpane").jScrollPane();
+    });
+    $(".preview-panel li a").click(function () {
+        if (!$(this).hasClass("active")) {
+            $(".preview-panel li.active").removeClass("active");
+            $(this).parent().addClass("active");
+            $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom("destroy");
+            var large_img = $(this).attr("data-href");
+            var small_img = $(this).find("img:first").attr("src");
+            $("#zoom-cont").html('<a href="' + large_img + '" class="cloud-zoom" rel="adjustX:-455"><img src="' + small_img + '" alt="" /></a>');
+            $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+        }
+        return false;
+    });
 });
 
 /* recalculate price 
@@ -507,6 +532,9 @@ function initializeGoogleMaps() {
 function getClientHeight() {
     return document.compatMode == 'CSS1Compat' && !window.opera ? document.documentElement.clientHeight : document.body.clientHeight;
 }
+function getClientWidth() {
+    return document.compatMode == 'CSS1Compat' && !window.opera ? document.documentElement.clientWidth : document.body.clientWidth;
+}
 function addCssLink(path) {
     var head = document.head || document.getElementsByTagName('head')[0];
     var link = document.createElement("link");
@@ -534,4 +562,12 @@ function fixStickPanelPosition() {
             $(".stick-toolbar").css("bottom", 0);
         }
     }
+}
+function fixCompareContainer() {
+
+        if ($(".page.compare").length) {
+            var w = parseInt(getClientWidth()) - 47 - 130;
+            $(".page.compare .compare-list").css("width", w + "px");
+        }
+
 }
