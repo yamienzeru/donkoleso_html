@@ -140,7 +140,7 @@ button, input, textarea {-webkit-appearance:none; -moz-appearance:none; -webkit-
                     padding:0 10px; 
                     font-weight:700;
                     overflow:hidden;
-                    letter-spacing:2px;
+                    letter-spacing:1px;
                 }
                 .menu-light ul li .phone {
                     letter-spacing:1px;
@@ -2349,7 +2349,7 @@ h1 .head-buttons {
     }
     .tile .tile-overlay {
         z-index:2;
-        background:#ffd719;
+        background:rgba(255,255,255,0.85);
         opacity:0;
         filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         -ms-filter:alpha(opacity=0);
@@ -2408,10 +2408,10 @@ h1 .head-buttons {
         font-weight:700;
         text-transform:uppercase;
     }
-    .tile .tile-overlay .tile-img .tile-add {
-        display:block;
-        padding-top:184px;
-    }
+    .tile-add-cart {height:40px; margin-top:52px; margin-bottom:-1px; padding-top:85px; background-image:url(../img/bb.png); background-position:50% 28px; background-repeat:no-repeat; -webkit-background-size:auto 42px; -moz-background-size:auto 42px; background-size:auto 42px;}
+    .tile-btn, .tile-add-cart {color:#2c2b2b; letter-spacing:1px; font-size:20px; font-weight:700; border:1px solid #2c2b2b; width:165px; display:block; margin-left:auto; margin-right:auto;}  
+    .tile .tile-overlay .tile-btn {text-transform:uppercase; height:49px; line-height:49px; white-space:nowrap; overflow:hidden;}
+    .tile .tile-overlay .tile-btn:hover, .tile .tile-overlay .tile-add-cart:hover {background-color:#ffd719; border-color:#ffd719;}
 .table-catalog .shopping-table td, .table-catalog .shopping-table th {
     width:10.11%;
     text-align:center;
